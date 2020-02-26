@@ -4,6 +4,9 @@ def hello(event:, context:)
   puts 'hello'
   puts JSON.pretty_generate(event.to_h)
   puts JSON.pretty_generate(JSON.parse(event['body']))
+  body = JSON.parse(event['body'])
+  puts "action: #{body['action']}"
+  puts "ref: #{body['pull_request']['head']['ref']}"
   {
     statusCode: 200,
     body: {
