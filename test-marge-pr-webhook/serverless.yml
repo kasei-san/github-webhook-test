@@ -8,4 +8,4 @@ functions:
     events:
       - http:
           path: test-marge-pr-webhook/hello
-          method: get
+          method: post
