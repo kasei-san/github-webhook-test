@@ -2,6 +2,8 @@ require 'json'
 
 def hello(event:, context:)
   puts 'hello'
+  puts JSON.pretty_generate(event.to_h)
+  puts JSON.pretty_generate(JSON.parse(event['body']))
   {
     statusCode: 200,
     body: {
